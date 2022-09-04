@@ -1,0 +1,68 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #4A5FC1;
+  padding-bottom: 6rem;
+}
+
+.introduction {
+  width: 50%;
+  text-align: left;
+}
+
+.introduction .text-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+}
+
+.technologies {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0rem;
+}
+
+.technologies span {
+  font-family: Inter;
+  font-weight: bold;
+  font-size: 32px;
+  color: #9CFBD0;
+}
+
+.technologies .logo-row {
+  gap: 20px;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0rem;
+}
+
+.resume {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container {
+  margin: 1.5rem 0rem;
+}

@@ -1,0 +1,49 @@
+.menu-button {
+  font-family: Inter;
+  font-size: 16px;
+  color: #9CC7FB;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-button:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.menu-button:active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.menu-button-active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.big-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  width: 170px;
+  border: none;
+  border-radius: 5px;
+}
+
+.download {
+  font-family: Inter;
+  font-size: 20px;
+  color: white;
+  background-color: #00458B;
+}
+
+.link {
+  font-family: Inter;
+  font-size: 20px;
+  color: #394F8A;
+  background-color: #99DDFF;
+}
