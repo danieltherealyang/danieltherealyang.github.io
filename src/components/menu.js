@@ -1,5 +1,6 @@
 import { MenuButton } from "./button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './menu.css';
 
@@ -12,8 +13,14 @@ export function MenuBar() {
 }
 
 function MenuPanel() {
-  const [ homeActive, setHomeActive ] = useState(true);
-  const [ portfolioActive, setPortfolioActive ] = useState(false);
+  const location = useLocation();
+  const [ homeActive, setHomeActive ] = useState();
+  const [ portfolioActive, setPortfolioActive ] = useState();
+
+  useEffect(() => {
+    setHomeActive(location.pathname === '/');
+    setPortfolioActive(location.pathname === '/portfolio');
+  }, [location.pathname]);
   
   function setInactive() {
     setHomeActive(false);

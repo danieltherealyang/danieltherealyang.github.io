@@ -34,6 +34,10 @@
   border-radius: 5px;
 }
 
+.big-button:hover {
+  box-shadow: 0px 1px 8px #404040;
+}
+
 .download {
   font-family: Inter;
   font-size: 20px;
@@ -41,9 +45,40 @@
   background-color: #00458B;
 }
 
+.download:hover {
+  background-color: #11569C;
+}
+
+.download:active {
+  background-color: #2267AD;
+}
+
 .link {
   font-family: Inter;
   font-size: 20px;
   color: #394F8A;
-  background-color: #99DDFF;
+  background-color: #99DDEE;
+}
+
+.link:hover {
+  background-color: #AAEEFF;
+}
+
+.link:active {
+  background-color: #BBFFFF;
+}
+
+.contact {
+  font-family: Inter;
+  font-size: 18px;
+  color: white;
+  background-color: #23C0AD;
+}
+
+.contact:hover {
+  background-color: #34D1BE;
+}
+
+.contact:active {
+  background-color: #45E2CF;
 }

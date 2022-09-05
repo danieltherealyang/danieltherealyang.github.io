@@ -1,6 +1,7 @@
 import './button.css';
 import { ReactComponent as Download } from '../images/download.svg';
 import { ReactComponent as Link } from '../images/link.svg';
+import { ReactComponent as Send } from '../images/send.svg';
 
 export function MenuButton(props) {
   return (
@@ -22,6 +23,15 @@ export function LinkButton(props) {
     <button className="big-button link" onClick={props.onClick}>
       <Link/>
       Link
+    </button>
+  );
+}
+
+export function ContactButton(props) {
+  return (
+    <button className="big-button contact" onClick={props.onClick}>
+      <Send/>
+      Contact Me
     </button>
   );
 }
