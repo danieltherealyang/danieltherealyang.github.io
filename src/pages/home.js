@@ -70,7 +70,7 @@ function ContactInfo() {
       <div className="contact-line-container">
         <div className="contact-line">
           <PhoneFilled style={{color: 'white'}}/>
-          <span>858-205-3058</span>
+          <span>858-205-0368</span>
         </div>
         <div className="contact-line">
           <MailFilled style={{color: 'white'}}/>
@@ -78,7 +78,7 @@ function ContactInfo() {
         </div>
         <div className="contact-line">
           <HomeFilled style={{color: 'white'}}/>
-          <span>San Diego, CA</span>
+          <span>Southern California</span>
         </div>
       </div>
     </div>
