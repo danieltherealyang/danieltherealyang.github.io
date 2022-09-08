@@ -1,4 +1,6 @@
 import './App.css';
+import { useEffect } from "react";
+import { useLocation } from "react-router";
 import { Routes, Route } from 'react-router-dom';
 import "@fontsource/inter";
 import Home from './pages/home';
@@ -11,12 +13,23 @@ function App() {
       <header>
         <MenuBar/>
       </header>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="portfolio" element={<Portfolio/>}/>
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="portfolio" element={<Portfolio/>}/>
+        </Routes>
+      </ScrollToTop>
     </div>
   );
 }
+
+function ScrollToTop(props) {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{props.children}</>
+};
 
 export default App;

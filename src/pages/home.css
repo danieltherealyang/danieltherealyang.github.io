@@ -1,5 +1,6 @@
 html {
   scroll-snap-type: y proximity;
+  overflow-x: hidden;
 }
 
 .row {
@@ -12,29 +13,33 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #4A5FC1;
+  background-color: black;
   scroll-snap-align: end;
 }
 
 @keyframes drop {
   0% {
+    opacity: 0;
     transform: scale(2);
   }
   85% {
-    transform: scale(1.15);
+    opacity: 1;
+    transform: scale(1.1);
   }
   95% {
-    transform: scale(1.15);
+    opacity: 1;
+    transform: scale(1.1);
   }
   100% {
+    opacity: 1;
     transform: scale(1);
   }
 }
 
 @keyframes fade-in {
   0% {
-    transform: scale(0.5);
     opacity: 0;
+    transform: scale(0.5);
   }
   75% {
     opacity: 1;
@@ -48,7 +53,8 @@ html {
 
 .introduction {
   transform: scale(2);
-  animation: drop 0.4s ease-out 0.1s 1 normal;
+  opacity: 0;
+  animation: drop 0.6s ease-out 0.1s 1 normal;
   animation-fill-mode: forwards;
   width: 50%;
   text-align: left;
@@ -62,7 +68,8 @@ html {
 
 .technologies {
   transform: scale(2);
-  animation: drop 0.4s ease-out 0.2s 1 normal;
+  opacity: 0;
+  animation: drop 0.6s ease-out 0.3s 1 normal;
   animation-fill-mode: forwards;
   width: 50%;
   display: flex;
@@ -79,9 +86,32 @@ html {
 }
 
 .technologies .logo-row {
+  display: flex;
+  flex-direction: row;
   gap: 20px;
   justify-content: center;
-  margin: 1rem;
+  margin: 1rem 2rem;
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 10px 1px #4A5FC1;
+  }
+  60% {
+    box-shadow: 0 0 10px 5px #4A5FC1;
+  }
+  100% {
+    box-shadow: 0 0 10px 1px #4A5FC1;
+  }
+}
+
+.tech-container {
+  animation: glow-pulse 2s linear 0s infinite forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  border-radius: 10px;
 }
 
 .body {
@@ -119,7 +149,72 @@ html {
 
 .contact-button-container {
   opacity: 0;
-  animation: fade-in 1s ease-in 0.3s 1 forwards; 
+  animation: fade-in 1s ease-in 0.5s 1 forwards; 
   animation-fill-mode: forwards;
-  justify-content: center;
+}
+
+.hover-modal {
+  font-family: Inter;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.rainbow-glow {
+  position: relative;
+}
+
+.rainbow-glow::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000, #ff7300, #fffb00);
+  top: -1px;
+  left: -1px;
+  animation: glowing 20s linear 0s infinite;
+  background-size: 400%;
+  border-radius: 10px;
+  filter: blur(1px);
+}
+
+.contact-card {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 2rem;
+  padding-top: 1.5rem;
+  border-radius: 10px;
+}
+
+.contact-card span {
+  font-family: Inter;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 1.5rem;
 }

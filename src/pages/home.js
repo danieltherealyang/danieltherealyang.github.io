@@ -2,6 +2,7 @@ import './home.css';
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Typical from 'react-typical';
+import { PhoneFilled, MailFilled, HomeFilled } from '@ant-design/icons';
 import { ReactComponent as Bash } from '../images/bash.svg';
 import { ReactComponent as Cpp } from '../images/cpp.svg';
 import { ReactComponent as Express } from '../images/express.svg';
@@ -15,15 +16,22 @@ import { ReactComponent as Sql } from '../images/sql.svg';
 import { ContactButton } from '../components/button';
 import { DownloadButton } from '../components/button';
 import { LinkButton } from '../components/button';
+import { HoverModal, CenterModal } from '../components/modal';
+
 
 export default function Home() {
   const headerRef = useRef();
   const [ y, setY ] = useState();
-  useEffect(() => {
+  const [ contactVisible, setContactVisible ] = useState(false);
+  const handleResize = () => {
     setY(headerRef.current.offsetTop);
-  }, []);
+  };
+  useEffect(handleResize, []);
   useEffect(() => {
-    window.addEventListener("resize", () => {setY(headerRef.current.offsetTop)})
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    }
   }, []);
   return (
     <div>
@@ -32,14 +40,45 @@ export default function Home() {
           <Introduction/>
           <Technologies/>
         </div>
-        <div className="row contact-button-container">
-          <ContactButton/>
+        {/* className="row contact-button-container" */}
+        <div className="row" style={{justifyContent: 'center'}}>
+          <CenterModal
+            visible={contactVisible}
+            content={<ContactInfo/>}
+            onClickOutside={() => setContactVisible(false)}
+          >
+            <div className="contact-button-container">
+              <ContactButton onClick={() => setContactVisible(true)}/>
+            </div>
+          </CenterModal>
         </div>
       </div>
       <div className="body">
         <div className="row">
           <Resume/>
           <Portfolio/>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ContactInfo() {
+  return (
+    <div className="contact-card rainbow-glow">
+      <span style={{fontSize: '18px'}}>Daniel Yang</span>
+      <div className="contact-line-container">
+        <div className="contact-line">
+          <PhoneFilled style={{color: 'white'}}/>
+          <span>858-205-3058</span>
+        </div>
+        <div className="contact-line">
+          <MailFilled style={{color: 'white'}}/>
+          <span>danielyangkang@gmail.com</span> 
+        </div>
+        <div className="contact-line">
+          <HomeFilled style={{color: 'white'}}/>
+          <span>San Diego, CA</span>
         </div>
       </div>
     </div>
@@ -116,22 +155,75 @@ function Portfolio() {
 }
 
 function Technologies() {
+  const gap = "2px";
   return (
     <div className="technologies">
-      <span>Technologies</span>
-      <div className="row logo-row">
-        <React/>
-        <Cpp/>
-        <Python/>
-        <Java/>
-        <Sql/>
-      </div>
-      <div className="row logo-row">
-        <Knex/>
-        <Express/>
-        <Firebase/>
-        <Postgres/>
-        <Bash/>
+      <div className="tech-container">
+        <span>Technologies</span>
+        <div className="logo-row">
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">React</div>}
+          >
+            <React/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">C++</div>}
+          >
+            <Cpp/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">Python</div>}
+          >
+            <Python/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">Java</div>}
+          >
+            <Java/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">SQL</div>}
+          >
+            <Sql/>
+          </HoverModal>
+        </div>
+        <div className="logo-row">
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">Knex</div>}
+          >
+            <Knex/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">Express</div>}
+          >
+            <Express/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">Firebase</div>}
+          >
+            <Firebase/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">Postgres</div>}
+          >
+            <Postgres/>
+          </HoverModal>
+          <HoverModal
+            gap={gap}
+            content={<div className="hover-modal">Bash</div>}
+          >
+            <Bash/>
+          </HoverModal>
+        </div>
       </div>
     </div>
   );
