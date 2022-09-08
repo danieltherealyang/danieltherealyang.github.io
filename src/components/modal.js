@@ -13,13 +13,12 @@ export function CenterModal(props) {
   const [ x, setX ] = useState();
   const [ y, setY ] = useState();
   const setXY = useCallback(() => {
-    console.log('setting');
     const x = (document.documentElement.clientWidth - bodyRef.current.clientWidth)/2;
     const y = window.pageYOffset + window.innerHeight/4 - bodyRef.current.clientHeight/2;
     setX(x);
     setY(y);
   }, []);
-  useEffect(setXY, [bodyRef.current, document.documentElement.clientWidth, setXY]);
+  useEffect(setXY, [visible]);
   const handleClickOutside = useCallback((event) => {
     if (backRef.current && backRef.current.contains(event.target))
       onClickOutside && onClickOutside();
