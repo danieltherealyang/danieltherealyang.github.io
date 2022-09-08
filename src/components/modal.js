@@ -18,7 +18,7 @@ export function CenterModal(props) {
     const y = window.pageYOffset + window.innerHeight/4 - bodyRef.current.clientHeight/2;
     setX(x);
     setY(y);
-  }, []);
+  }, [document.documentElement.clientWidth]);
   useEffect(setXY, [bodyRef.current, setXY]);
   const handleClickOutside = useCallback((event) => {
     if (backRef.current && backRef.current.contains(event.target))
