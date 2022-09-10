@@ -1,7 +1,6 @@
 import './home.css';
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Typical from 'react-typical';
 import { PhoneFilled, MailFilled, HomeFilled } from '@ant-design/icons';
 import { ReactComponent as Bash } from '../images/bash.svg';
 import { ReactComponent as Cpp } from '../images/cpp.svg';
@@ -17,6 +16,7 @@ import { ContactButton } from '../components/button';
 import { DownloadButton } from '../components/button';
 import { LinkButton } from '../components/button';
 import { HoverModal, CenterModal } from '../components/modal';
+import Typing from '../components/typing';
 
 
 export default function Home() {
@@ -35,26 +35,32 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className="header" style={{height: `calc(100vh - ${y}px)`}} ref={headerRef}>
+      <div className="header"
+        style={{
+          height: (window.innerWidth > 750) ? `calc(100vh - ${y}px)` : ''
+        }}
+        ref={headerRef}
+      >
         <div className="row">
           <Introduction/>
           <Technologies/>
         </div>
-        {/* className="row contact-button-container" */}
-        <div className="row" style={{justifyContent: 'center'}}>
-          <CenterModal
-            visible={contactVisible}
-            content={<ContactInfo/>}
-            onClickOutside={() => setContactVisible(false)}
-          >
-            <div className="contact-button-container">
-              <ContactButton onClick={() => setContactVisible(true)}/>
-            </div>
-          </CenterModal>
+        <div className="contact-row-container">
+          <div className="row" style={{justifyContent: 'center'}}>
+            <CenterModal
+              visible={contactVisible}
+              content={<ContactInfo/>}
+              onClickOutside={() => setContactVisible(false)}
+            >
+              <div className="contact-button-container">
+                <ContactButton onClick={() => setContactVisible(true)}/>
+              </div>
+            </CenterModal>
+          </div>
         </div>
       </div>
       <div className="body">
-        <div className="row">
+        <div className="row link-container">
           <Resume/>
           <Portfolio/>
         </div>
@@ -281,7 +287,7 @@ function WorkAnimation() {
   const wait = 1500;
 
   return (
-    <Typical
+    <Typing
       steps={[
         'React', wait,
         'C++', wait,

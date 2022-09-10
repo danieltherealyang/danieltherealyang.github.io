@@ -10,9 +10,7 @@ import { MenuBar } from './components/menu';
 function App() {
   return (
     <div className="App">
-      <header>
-        <MenuBar/>
-      </header>
+      <MenuBar/>
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Home/>}/>

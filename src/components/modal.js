@@ -18,7 +18,7 @@ export function CenterModal(props) {
     setX(x);
     setY(y);
   }, []);
-  useEffect(setXY, [visible]);
+  useEffect(setXY, [visible, setXY]);
   const handleClickOutside = useCallback((event) => {
     if (backRef.current && backRef.current.contains(event.target))
       onClickOutside && onClickOutside();
