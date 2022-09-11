@@ -282,7 +282,7 @@ html {
 .arrow-down {
   animation: arrow-bounce 1s ease-out 0s infinite forwards;
   font-size: 32px;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 @keyframes arrow-bounce {
