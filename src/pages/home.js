@@ -1,7 +1,7 @@
 import './home.css';
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PhoneFilled, MailFilled, HomeFilled } from '@ant-design/icons';
+import { PhoneFilled, MailFilled, HomeFilled, ArrowDownOutlined } from '@ant-design/icons';
 import { ReactComponent as Bash } from '../images/bash.svg';
 import { ReactComponent as Cpp } from '../images/cpp.svg';
 import { ReactComponent as Express } from '../images/express.svg';
@@ -58,6 +58,7 @@ export default function Home() {
             </CenterModal>
           </div>
         </div>
+        <ArrowDownOutlined className='white arrow-down'/>
       </div>
       <div className="body">
         <div className="row link-container">
@@ -75,15 +76,15 @@ function ContactInfo() {
       <span style={{fontSize: '18px'}}>Daniel Yang</span>
       <div className="contact-line-container">
         <div className="contact-line">
-          <PhoneFilled style={{color: 'white'}}/>
+          <PhoneFilled className='white'/>
           <span>858-205-0368</span>
         </div>
         <div className="contact-line">
-          <MailFilled style={{color: 'white'}}/>
+          <MailFilled className='white'/>
           <span>danielyangkang@gmail.com</span> 
         </div>
         <div className="contact-line">
-          <HomeFilled style={{color: 'white'}}/>
+          <HomeFilled className='white'/>
           <span>Southern California</span>
         </div>
       </div>
@@ -291,8 +292,8 @@ function WorkAnimation() {
       steps={[
         'React', wait,
         'C++', wait,
-        'Java', wait,
         'Python', wait,
+        'Java', wait,
         'SQL', wait,
         'Knex', wait,
         'Express', wait,

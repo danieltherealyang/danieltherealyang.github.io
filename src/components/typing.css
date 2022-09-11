@@ -12,7 +12,7 @@
 
 .cursor {
   animation: cursor-blink 1.0s steps(1) infinite;
-  margin-left: 2px;
+  margin: 2px;
   width: 2px;
   background: currentColor;
   display: flex;
