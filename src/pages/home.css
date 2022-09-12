@@ -226,7 +226,7 @@ html {
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .white {
@@ -241,13 +241,13 @@ html {
 
 @keyframes arrow-bounce {
   0% {
-    transform: translateY(0);
+    transform: translateY(-5px);
   }
   40% {
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(-5px);
   }
 }
 
