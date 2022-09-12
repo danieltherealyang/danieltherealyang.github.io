@@ -13,31 +13,6 @@ html {
   justify-content: space-evenly;
 }
 
-@media screen and (min-width: 800px) {
-  .row {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .row {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .link-container {
-    height: 100%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .row {
-    width: 100%;
-  }
-}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -89,15 +64,6 @@ html {
   text-align: left;
 }
 
-
-@media screen and (max-width: 750px) {
-  .introduction {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-}
-
 .introduction .text-container {
   display: flex;
   flex-direction: column;
@@ -129,18 +95,6 @@ html {
   gap: 20px;
   justify-content: center;
   margin: 1rem 2rem;
-}
-
-@media screen and (max-width: 420px) {
-  .technologies .logo-row {
-    margin: 1rem 0rem;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .technologies .logo-row {
-    gap: 0px;
-  }
 }
 
 @keyframes glow-pulse {
@@ -294,5 +248,85 @@ html {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+.hello {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.name {
+  font-family: Inter;
+  font-weight: bold;
+  font-size: 64px;
+  color: #9CF6FB;
+}
+
+.iam {
+  font-family: Inter;
+  font-size: 24px;
+  color: white;
+}
+
+.workwith {
+  font-family: Inter;
+  font-size: 16px;
+  color: white;
+  margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 360px) {
+  .technologies .logo-row {
+    gap: 0px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .technologies .logo-row {
+    margin: 1rem 0rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .name {
+    font-size: 56px;
+  }
+  .iam {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .row {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .introduction {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .link-container {
+    height: 100%;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .row {
+    width: 80%;
   }
 }

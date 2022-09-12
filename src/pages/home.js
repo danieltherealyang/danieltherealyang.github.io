@@ -240,43 +240,16 @@ function Introduction() {
   return (
     <div className="introduction">
       <div className="text-container">
-        <span
-          style={{
-            fontFamily: "Inter",
-            fontWeight: 600,
-            fontSize: "14px",
-            color: "white"
-          }}
-        >
+        <span className="hello">
           Hello my name is
         </span>
-        <span
-          style={{
-            fontFamily: "Inter",
-            fontWeight: "bold",
-            fontSize: "64px",
-            color: "#9CF6FB"
-          }}
-        >
+        <span className="name">
           Daniel Yang
         </span>
-        <span
-          style={{
-            fontFamily: "Inter",
-            fontSize: "24px",
-            color: "white"
-          }}
-        >
+        <span className="iam">
           I am a <b>developer</b>
         </span>
-        <span
-          style={{
-            fontFamily: "Inter",
-            fontSize: "16px",
-            color: "white",
-            margin: "0.5rem 0"
-          }}
-        >
+        <span className="workwith">
           I work with <span style={{"color": "#3FD2C7"}}><WorkAnimation/></span>
         </span>
       </div>
