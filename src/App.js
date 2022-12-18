@@ -4,7 +4,6 @@ import { useLocation } from "react-router";
 import { Routes, Route } from 'react-router-dom';
 import "@fontsource/inter";
 import Home from './pages/home';
-import Portfolio from './pages/portfolio';
 import { MenuBar } from './components/menu';
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="portfolio" element={<Portfolio/>}/>
         </Routes>
       </ScrollToTop>
     </div>

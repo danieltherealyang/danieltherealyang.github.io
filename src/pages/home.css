@@ -9,10 +9,6 @@ html {
   width: 90%;
 }
 
-.link-container {
-  justify-content: space-evenly;
-}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -120,10 +116,12 @@ html {
 
 .body {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  scroll-snap-align: start;
+  justify-content: flex-start;
+  scroll-snap-align: flex-start;
+  margin: 0rem 6rem;
+  background-color: white;
 }
 
 .fade-in {
@@ -131,14 +129,7 @@ html {
   animation-fill-mode: forwards;
 }
 
-.resume {
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.portfolio {
+.resume-fade {
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -278,6 +269,36 @@ html {
   margin: 0.5rem 0;
 }
 
+.entry-rows {
+  width: 100%;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  font-size: 16px;
+  font-family: "Merriweather";
+  color:dodgerblue;
+}
+
+.cursor::after {
+  content: "";
+  width: 2px;
+  height: 18px;
+  background: dodgerblue;
+  display: inline-block;
+  animation: cursor-blink 1.5s steps(2) infinite;
+}
+
 @media screen and (max-width: 360px) {
   .technologies .logo-row {
     gap: 0px;
@@ -322,6 +343,10 @@ html {
   .link-container {
     height: 100%;
     justify-content: space-evenly;
+  }
+
+  .body {
+    margin: 0rem;
   }
 }
 

@@ -1,0 +1,55 @@
+.statement-container {
+  margin: 2rem 4rem;
+}
+
+.statement-text {
+  font-family: 'Merriweather';
+  font-size: 14px;
+  font-style: italic;
+  line-height: 48px;
+}
+
+.section-title {
+  font-family: 'Source Sans Pro';
+  font-size: 48px;
+  font-weight: 900;
+}
+
+.section-title-container {
+  width: 100%;
+  padding: 4rem 0rem;
+  margin: 4rem 0rem;
+  border-top: #e6e6e6 solid 2px;
+  border-bottom: #e6e6e6 solid 2px;
+}
+
+.entry {
+  flex: 1;
+}
+
+.entry h5 {
+  font-family: 'Merriweather';
+  font-weight: 300;
+  font-style: italic;
+}
+
+.entry h2 {
+  margin: 2rem 0rem;
+}
+
+.entry p {
+  font-family: 'Source Sans Pro';
+  font-size: 16px;
+  line-height: 32px;
+  margin: 2rem 3rem;
+}
+
+.entry a {
+  margin: 0rem 0.5rem;
+}
+
+.entry-row {
+  display: flex;
+  width: 100%;
+  padding-bottom: 2rem;
+}

@@ -1,84 +1,63 @@
 .menu-button {
   font-family: Inter;
-  font-size: 16px;
-  color: #9cc7fb;
+  font-size: 28px;
+  color: white;
   background-color: transparent;
   border: none;
 }
 
 .menu-button:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
+  color: #9cc7fb;
 }
 
 .menu-button:active {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-}
-
-.menu-button-active {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
+  color: #549ef8;
 }
 
 .big-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 10px 15px;
-  width: 170px;
+  padding: 15px 15px;
+  width: 150px;
   border: none;
-  border-radius: 5px;
-}
-
-.big-button:hover {
-  box-shadow: 0px 1px 8px #404040;
-}
-
-.download {
-  font-family: Inter;
-  font-size: 20px;
-  color: white;
-  background-color: #00458B;
-}
-
-.download:hover {
-  background-color: #11569C;
-}
-
-.download:active {
-  background-color: #2267AD;
-}
-
-.link {
-  font-family: Inter;
-  font-size: 20px;
-  color: #394F8A;
-  background-color: #99DDEE;
-}
-
-.link:hover {
-  background-color: #AAEEFF;
-}
-
-.link:active {
-  background-color: #BBFFFF;
 }
 
 .contact {
   font-family: Inter;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: bold;
   color: white;
-  background-color: #23C0AD;
+  background-color: black;
+  border: white solid 2px;
 }
 
 .contact:hover {
-  background-color: #34D1BE;
+  color: #82e3d7;
+  border-color: #82e3d7;
 }
 
 .contact:active {
-  background-color: #45E2CF;
+  color: #2abbaa;
+  border-color: #2abbaa;
+}
+
+.resume {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  border: black solid 2px;
+  background-color: white;
+}
+
+.resume:hover {
+  color: #18bfef;
+  border-color: #18bfef;
+}
+
+.resume:active {
+  color: #0d98bf;
+  border-color: #0d98bf;
 }

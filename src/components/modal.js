@@ -71,6 +71,7 @@ export function HoverModal(props) {
   };
   useEffect(() => {
     setXY();
+    // eslint-disable-next-line
   }, [bodyRef.current, modalRef.current]);
   useEffect(() => {
     window.addEventListener('resize', setXY);
