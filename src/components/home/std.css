@@ -50,6 +50,13 @@
 
 .entry-row {
   display: flex;
+  justify-content: center;
   width: 100%;
   padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 750px) {
+  .entry-row {
+    flex-direction: column;
+  }
 }

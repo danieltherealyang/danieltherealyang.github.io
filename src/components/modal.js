@@ -70,13 +70,15 @@ export function HoverModal(props) {
     setY(y);
   };
   useEffect(() => {
-    setXY();
-    // eslint-disable-next-line
-  }, [bodyRef.current, modalRef.current]);
-  useEffect(() => {
     window.addEventListener('resize', setXY);
     return () => window.removeEventListener('resize', setXY);
   }, []);
+  useEffect(() => {
+    setXY();
+  }, [
+    bodyRef.current?.offsetLeft, bodyRef.current?.clientWidth, modalRef.current?.clientWidth,
+    bodyRef.current?.offsetTop, modalRef.current?.clientHeight
+  ]);
   return (
     <div
       ref={bodyRef}
@@ -91,7 +93,7 @@ export function HoverModal(props) {
           left: x,
           top: `calc(${y}px ${(props.gap) ? (' - ' + props.gap) : ''})`,
           zIndex: 10,
-          visibility: visibility,
+          visibility: visibility
         }}
       >
         {props.content}

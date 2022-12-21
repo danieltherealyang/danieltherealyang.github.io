@@ -115,6 +115,7 @@ html {
 }
 
 .body {
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -288,6 +289,7 @@ html {
   font-size: 16px;
   font-family: "Merriweather";
   color:dodgerblue;
+  margin: 6rem 0rem;
 }
 
 .cursor::after {
@@ -297,6 +299,17 @@ html {
   background: dodgerblue;
   display: inline-block;
   animation: cursor-blink 1.5s steps(2) infinite;
+}
+
+.iframe {
+  flex-grow: 1;
+  max-width: 560px;
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  margin: 0rem 3rem;
 }
 
 @media screen and (max-width: 360px) {
@@ -344,14 +357,28 @@ html {
     height: 100%;
     justify-content: space-evenly;
   }
+}
 
+@media screen and (min-width: 750px) {
+  .row {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .body {
     margin: 0rem;
   }
 }
 
-@media screen and (min-width: 800px) {
-  .row {
-    width: 80%;
+@media screen and (min-width: 800px) and (max-width: 900px) {
+  .body {
+    margin: 0rem 2rem;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+  .body {
+    margin: 0rem 4rem;
   }
 }
